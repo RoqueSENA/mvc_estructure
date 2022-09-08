@@ -1,0 +1,40 @@
+.card-header{
+    background-color: gold;
+    
+
+
+}
+
+.btn{
+
+    background-color: gold;
+    font-feature-settings: black;
+    color: black;
+    
+
+}
+
+.card-body{
+
+    background-color:ghostwhite;
+
+
+}
+
+.accordion-body{
+
+    background-color:ghostwhite
+
+
+}
+
+.accordion-button:not(.collapsed){
+
+    background-color: gold;
+    color: black;
+}
+
+.theader{
+    background-color: gold;
+
+}
