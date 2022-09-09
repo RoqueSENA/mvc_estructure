@@ -20,7 +20,7 @@ class Usuario{
 			
 				}
     public function GuardarUsuario(){
-        $sql =("INSERT INTO boveda_manager.usuarios(cod_usr, nom_usr, pass_usr, rol_usr) 
+        $sql =("INSERT INTO bovedamanager-database.usuarios(cod_usr, nom_usr, pass_usr, rol_usr) 
         VALUES (?,?,?,?)");
         $insertar =$this->db->db->prepare($sql);
         $insertar->bindParam(1,$this->codUser);
@@ -32,7 +32,7 @@ class Usuario{
     
     public function ConsultarUsuario($codUser){
         
-        $sql="SELECT * FROM boveda_manager.usuarios WHERE cod_usr ='$this->codUser' ";
+        $sql="SELECT * FROM bovedamanager-database.usuarios WHERE cod_usr ='$this->codUser' ";
         $consulta = $this->db->db->prepare($sql);
 
         $consulta->execute();
@@ -48,7 +48,7 @@ class Usuario{
     public function GetUsuarios(){
 
 				
-        $resultado = $this->db->db->query("SELECT * FROM boveda_manager.usuarios");
+        $resultado = $this->db->db->query("SELECT * FROM bovedamanager-database.usuarios");
         while($row = $resultado->fetch(PDO::FETCH_ASSOC))
         {
             $this-> usuarios [] = $row;
@@ -60,7 +60,7 @@ class Usuario{
 
 				public function GetUsuario($codusr)
 		{
-			$sql = "SELECT * FROM boveda_manager.usuarios WHERE cod_usr ='$codusr' LIMIT 1";
+			$sql = "SELECT * FROM bovedamanager-database.usuarios WHERE cod_usr ='$codusr' LIMIT 1";
 			$resultado = $this->db->db->query($sql);
 			$row = $resultado->fetch(PDO::FETCH_ASSOC);
 
@@ -69,14 +69,14 @@ class Usuario{
 
     public function modificar($codusr, $nomusr,$passusr,$rolusr){
 			
-        $resultado = $this->db->db->query("UPDATE boveda_manager.usuarios 
+        $resultado = $this->db->db->query("UPDATE bovedamanager-database.usuarios 
         SET cod_usr='$codusr', nom_usr='$nomusr', pass_usr = '$passusr', rol_usr = '$rolusr' WHERE cod_usr = '$codusr'");
         $this->RedirectAdminUser();		
     }
     
     public function eliminar($codusr){
         
-        $resultado = $this->db->db->query("DELETE FROM  boveda_manager.usuarios WHERE cod_usr = '$codusr'");
+        $resultado = $this->db->db->query("DELETE FROM  bovedamanager-database.usuarios WHERE cod_usr = '$codusr'");
         $this->RedirectAdminUser();
     }
 
