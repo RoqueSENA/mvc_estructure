@@ -9,7 +9,7 @@ class Connection{
     public function __construct(){
         
         try{
-            $this-> db=new PDO ('mysql:host=bovedamanager-server.mysql.database.azure.com; dbname = bovedamanager-database','vwkidwdrzg','U058EVC6178H7CI3$');
+            $this-> db=new PDO ('mysql:host=localhost; dbname = boveda_manager','admin','admin');
 
         } catch     (PDOException $e) {
             die("Error ".$e->getMessage());
